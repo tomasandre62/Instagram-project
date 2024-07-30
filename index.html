@@ -3,80 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Style.css">
-    <title>Photo Feed con HTML/CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/bec5c2dc78.js" crossorigin="anonymous"></script>
+</head>
+    <title>Instagram Project</title>
 </head>
 <body>
-    <div class="header">
-        <div class="title">
-            <h1>Breathe Code Photo Feed</h1>
+    <nav class="navbar navbar-light bg-light py-3">
+        <div class="container-fluid">
+            <div class="d-flex w-100 justify-content-between">
+                <div>
+                    <i class="fa-brands fa-instagram fa-xl"></i>
+                    <h5 class="d-inline-block fs-5">Instagram</h5>
+                </div>
+                <div class="d-flex align-right justify-content-end">
+                    <button type="button" class="btn btn-success me-2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Create a new post
+                    </button>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-gear"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                            <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="content">
-        <div class="section">
-            <div class="section-header">
-                <div class="section-title">
-                    <h2>My First Photo</h2>
-                </div>
-                <div class="date">
-                    <h4>12/14</h4>
-                </div>
+    </nav>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="photo">
-                <img src="https://www.weareamundsen.com/wp-content/uploads/2017/02/code-1076536_960_720.jpg" alt="">
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label fw-bold">Caption:</label>
+                      <textarea class="form-control" placeholder="Add the caption of your post here" id="floatingTextarea"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-light border"><i class="fa-solid fa-camera"></i></button>
+                    <button type="button" class="btn btn-light border"><i class="fa-solid fa-location-dot"></i></button>
+                  </form>
             </div>
-            <div class="caption">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem, repellat quaerat hic quam nihil quos illo inventore, ullam dolore laborum similique quo assumenda alias est recusandae debitis aut at asperiores.
-            </div>    
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success">Publish</button>
+            </div>
+          </div>
         </div>
-        <div class="section">
-            <div class="section-header">
-                <div class="section-title">
-                    <h2>My second photo</h2>
+      </div>
+      <div class="container-fluid p-3">
+        <nav>
+            <div class="nav nav-tabs justify-content-center border-0" id="nav-tab" role="tablist">
+              <button class="nav-link active border-0" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fa-solid fa-table-cells" aria-hidden="true"></i></button>
+              <button class="nav-link border-0" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fa-solid fa-square" aria-hidden="true"></i></button>
+            </div>
+          </nav>
+          <div class="tab-content pt-2" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                <div class="row">
+                    <div class="col-4 p-2">
+                        <img style="height: 30vw;" src="https://tvup.media/wp-content/uploads/2019/07/0_HICLyAdNSIyT0ODU.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="col-4 p-2">
+                        <img style="height: 30vw;" src="https://bairesdev.mo.cloudinary.net/blog/2022/08/portrait-of-a-man-using-a-computer-in-a-modern-office-picture-id1344688156-1.jpg?tx=w_1024,q_auto" class="img-fluid" alt="...">
+                    </div>
+                    <div class="col-4 p-2">
+                        <img style="height: 30vw;" src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/gzZpBDV3nX1AWytfLhbgs/d528553697d959544c8ca5b80b6d8beb/web_developer.png?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive&auto=format%2Ccompress&dpr=1&w=1000" class="img-fluid" alt="...">
+                    </div>
                 </div>
-                <div class="date">
-                    <h4>12/17</h4>
+                <div class="row">
+                    <div class="col-4 p-2">
+                        <img style="height: 30vw;" src="https://bairesdev.mo.cloudinary.net/blog/2023/09/How-Many-Web-Developers-in-the-World-1.jpg?tx=w_1024,q_auto" class="img-fluid" alt="...">
+                    </div>
+                    <div class="col-4 p-2">
+                        <img style="height: 30vw;" src="https://hub.laboratoria.la/hubfs/HUB%20COVER%20%282%29-1.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="col-4 p-2">
+                        <img style="height: 30vw;" src="https://static-00.iconduck.com/assets.00/web-developer-illustration-1004x1024-wcqgbag3.png" class="img-fluid" alt="...">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 p-2">
+                        <img style="height: 30vw;" src="https://www.mundoposgrado.com/wp-content/uploads/2023/03/12063795_4884785-1024x683.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="col-4 p-2">
+                        <img style="height: 30vw;" src="https://usa.bootcampcdn.com/wp-content/uploads/sites/106/2020/08/CDG_blog_post_image_01-850x412.jpg" class="img-fluid" alt="...">
+                    </div>
+                    <div class="col-4 p-2">
+                        <img style="height: 30vw;" src="https://theforage.wpengine.com/wp-content/uploads/2022/09/what-is-a-web-developer-1536x1025.jpg" class="img-fluid" alt="...">
+                    </div>
                 </div>
             </div>
-            <div class="photo">
-                <img src="https://i0.wp.com/indexdesarrollo.com/wp-content/uploads/2017/11/aprender-programacion-web.jpg?resize=800%2C501&ssl=1" alt="">
-            </div>
-            <div class="caption">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto aliquid, blanditiis inventore laudantium non ab. Qui delectus, corrupti sed aliquid tempora, asperiores expedita deserunt earum ab iusto vero velit quaerat.
-            </div>    
-        </div>
-        <div class="section">
-            <div class="section-header">
-                <div class="section-title">
-                    <h2>My third photo</h2>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                <div class="container-fluid pt-3">
+                    <div class="row pt-4">
+                        <div class="card col-6 p-0" style="margin: 0 auto;">
+                            <div class="card-body d-flex w-100 justify-content-between">
+                                <h3>
+                                    Developer.
+                                </h3>
+                                <span class="fs-6 fw-lighter">03/22</span>
+                              </div>
+                            <img src="https://tvup.media/wp-content/uploads/2019/07/0_HICLyAdNSIyT0ODU.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="fw-bold pb-0 mb-0">3924 Likes</p>
+                                <p class="card-text pt-0 mt-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="card col-6 p-0" style="margin: 0 auto;">
+                            <div class="card-body d-flex w-100 justify-content-between">
+                                <h3>
+                                    Employability.
+                                </h3>
+                                <span class="fs-6 fw-lighter">10/12</span>
+                              </div>
+                            <img src="https://bairesdev.mo.cloudinary.net/blog/2022/08/portrait-of-a-man-using-a-computer-in-a-modern-office-picture-id1344688156-1.jpg?tx=w_1024,q_auto" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="fw-bold pb-0 mb-0">2834 Likes</p>
+                                <p class="card-text pt-0 mt-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="card col-6 p-0" style="margin: 0 auto;">
+                            <div class="card-body d-flex w-100 justify-content-between">
+                                <h3>
+                                    Remote work.
+                                </h3>
+                                <span class="fs-6 fw-lighter">03/22</span>
+                              </div>
+                            <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/gzZpBDV3nX1AWytfLhbgs/d528553697d959544c8ca5b80b6d8beb/web_developer.png?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive&auto=format%2Ccompress&dpr=1&w=1000" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="fw-bold pb-0 mb-0">472 Likes</p>
+                                <p class="card-text pt-0 mt-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="card col-6 p-0" style="margin: 0 auto;">
+                            <div class="card-body d-flex w-100 justify-content-between">
+                                <h3>
+                                    Html Css JavaScript.
+                                </h3>
+                                <span class="fs-6 fw-lighter">12/06</span>
+                              </div>
+                            <img src="https://bairesdev.mo.cloudinary.net/blog/2023/09/How-Many-Web-Developers-in-the-World-1.jpg?tx=w_1024,q_auto" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="fw-bold pb-0 mb-0">3374 Likes</p>
+                                <p class="card-text pt-0 mt-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="card col-6 p-0" style="margin: 0 auto;">
+                            <div class="card-body d-flex w-100 justify-content-between">
+                                <h3>
+                                    Hire Talent.
+                                </h3>
+                                <span class="fs-6 fw-lighter">03/24</span>
+                              </div>
+                            <img src="https://hub.laboratoria.la/hubfs/HUB%20COVER%20%282%29-1.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="fw-bold pb-0 mb-0">10933 Likes</p>
+                                <p class="card-text pt-0 mt-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="card col-6 p-0" style="margin: 0 auto;">
+                            <div class="card-body d-flex w-100 justify-content-between">
+                                <h3>
+                                    Concentration.
+                                </h3>
+                                <span class="fs-6 fw-lighter">09/13</span>
+                              </div>
+                            <img src="https://static-00.iconduck.com/assets.00/web-developer-illustration-1004x1024-wcqgbag3.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="fw-bold pb-0 mb-0">4421 Likes</p>
+                                <p class="card-text pt-0 mt-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="card col-6 p-0" style="margin: 0 auto;">
+                            <div class="card-body d-flex w-100 justify-content-between">
+                                <h3>
+                                    Practice makes you better.
+                                </h3>
+                                <span class="fs-6 fw-lighter">03/31</span>
+                              </div>
+                            <img src="https://www.mundoposgrado.com/wp-content/uploads/2023/03/12063795_4884785-1024x683.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="fw-bold pb-0 mb-0">1234 Likes</p>
+                                <p class="card-text pt-0 mt-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="card col-6 p-0" style="margin: 0 auto;">
+                            <div class="card-body d-flex w-100 justify-content-between">
+                                <h3>
+                                    Wide market.
+                                </h3>
+                                <span class="fs-6 fw-lighter">02/02</span>
+                              </div>
+                            <img src="https://usa.bootcampcdn.com/wp-content/uploads/sites/106/2020/08/CDG_blog_post_image_01-850x412.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="fw-bold pb-0 mb-0">4321 Likes</p>
+                                <p class="card-text pt-0 mt-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-4">
+                        <div class="card col-6 p-0" style="margin: 0 auto;">
+                            <div class="card-body d-flex w-100 justify-content-between">
+                                <h3>
+                                    versatility.
+                                </h3>
+                                <span class="fs-6 fw-lighter">05/29</span>
+                              </div>
+                            <img src="https://theforage.wpengine.com/wp-content/uploads/2022/09/what-is-a-web-developer-1536x1025.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="fw-bold pb-0 mb-0">88374 Likes</p>
+                                <p class="card-text pt-0 mt-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="date">
-                    <h4>12/20</h4>
-                </div>
             </div>
-            <div class="photo">
-                <img src="https://nerade.com/media/pages/blog/programacion-web-a-medida/2022067010-1696617130/servicios-de-programacion-web-a-medida-1032x.jpg" alt="">
-            </div>
-            <div class="caption">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis aut velit soluta odit. Deleniti autem libero omnis! Modi eligendi nam quibusdam pariatur perspiciatis quas! Iusto beatae aut asperiores vitae minus.
-            </div>    
-        </div>
-        <div class="section">
-            <div class="section-header">
-                <div class="section-title">
-                    <h2>My fourth photo</h2>
-                </div>
-                <div class="date">
-                    <h4>12/21</h4>
-                </div>
-            </div>
-            <div class="photo">
-                <img src="https://www.rananegra.es/uploads/images/duda-dise%C3%B1o-programaci%C3%B3n.jpg" alt="">
-            </div>
-            <div class="caption">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, quis vel iste corrupti maxime temporibus hic molestias. Unde, vero impedit! Voluptatum aperiam hic nam iusto laborum, corrupti soluta repellat cupiditate?
-            </div>    
-        </div>
-    </div>
+          </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>
